@@ -1,0 +1,20 @@
+@use "../base/variables" as *;
+
+.header {
+  height: 80px;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: $bp-md) {
+    padding: 46px 110px;
+  }
+  @media screen and (min-width: $bp-xxl) {
+    padding: 46px 310px;
+  }
+}
+
+.logo {
+  // width: 13px;
+}

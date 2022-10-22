@@ -1,0 +1,50 @@
+@use "../base/variables" as *;
+
+.contact {
+  background-color: var(--color-grey-dark);
+  padding: 48px 20px;
+  display: grid;
+  justify-items: center;
+
+  &__form {
+    display: grid;
+    grid-gap: 26px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 50px 32px;
+
+    @media screen and (min-width: $bp-xl) {
+      max-width: 1030px;
+      justify-items: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__form input,
+  &__form select,
+  &__form textarea {
+    max-width: 256px;
+    border: 1px var(--color-secondary) solid;
+    border-radius: 16px;
+    padding: 15px 24px;
+
+    @media screen and (min-width: $bp-md) {
+      max-width: 467px;
+    }
+  }
+
+  &__form select {
+    background-color: transparent;
+  }
+}
+
+.input__options {
+  justify-self: start;
+}
+
+.input__option {
+  display: flex;
+  justify-self: start;
+  font-size: 12px;
+  column-gap: 8px;
+}

@@ -1,0 +1,41 @@
+@use "../base/variables" as *;
+
+.services {
+  padding: 48px 20px;
+  display: grid;
+
+  &__list {
+    justify-self: center;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+
+    @media screen and (min-width: $bp-md) {
+      grid-template-columns: repeat(3, 192px);
+    }
+
+    @media screen and (min-width: $bp-xl) {
+      grid-gap: 32px;
+      grid-template-columns: repeat(6, 192px);
+    }
+  }
+
+  &__item {
+    width: 144px;
+    height: 144px;
+    border-radius: 16px;
+
+    @media screen and (min-width: $bp-xxl) {
+      width: 192px;
+      height: 192px;
+    }
+  }
+
+  &__item:nth-child(odd) {
+    background-color: var(--color-grey-dark);
+  }
+  &__item:nth-child(even) {
+    background-color: var(--color-grey-light);
+  }
+}

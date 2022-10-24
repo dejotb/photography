@@ -151,8 +151,8 @@ h2 {
 }
 .gallery__list {
   display: grid;
-  grid-template-columns: minmax(360px, 1fr);
-  grid-template-rows: minmax(360px, 1fr);
+  grid-template-columns: minmax(360px);
+  grid-template-rows: minmax(360px);
 }
 @media screen and (min-width: 45em) {
   .gallery__list {
@@ -161,8 +161,8 @@ h2 {
 }
 @media screen and (min-width: xxl) {
   .gallery__list {
-    grid-template-columns: repeat(4, minmax(480px, 1fr));
-    grid-template-rows: repeat(3, minmax(480px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 45em) {
@@ -171,8 +171,14 @@ h2 {
   }
 }
 .gallery__item--rect img {
-  height: 100%;
+  min-height: 360px;
   object-fit: cover;
+}
+@media screen and (min-width: 45em) {
+  .gallery__item--rect img {
+    aspect-ratio: 2/1;
+    min-height: auto;
+  }
 }
 
 .desktop {
@@ -192,18 +198,18 @@ h2 {
   justify-self: center;
   display: grid;
   justify-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
 }
 @media screen and (min-width: 45em) {
   .services__list {
-    grid-template-columns: repeat(3, 192px);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media screen and (min-width: 75em) {
   .services__list {
     grid-gap: 32px;
-    grid-template-columns: repeat(6, 192px);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 .services__item {

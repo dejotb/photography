@@ -8,16 +8,17 @@
     justify-self: center;
     display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px;
 
     @media screen and (min-width: $bp-md) {
-      grid-template-columns: repeat(3, 192px);
+      grid-template-columns: repeat(4, 1fr);
+      // grid-template-columns: repeat(auto-fit, minmax(1fr, 192px));
     }
 
     @media screen and (min-width: $bp-xl) {
       grid-gap: 32px;
-      grid-template-columns: repeat(6, 192px);
+      grid-template-columns: repeat(6, 1fr);
     }
   }
 
